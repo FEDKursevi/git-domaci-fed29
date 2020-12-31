@@ -1,0 +1,481 @@
+@import 'vars', 'mixins';
+
+*{
+    @include reset();
+}
+
+body {
+    font-family: $font-family;
+    color: $color-font;
+}
+
+// Navbar
+
+.nav {
+    display: flex;
+    background-color: $color-primary;
+
+    .new-york {
+        display: flex;
+        align-self: center;
+        background-color: $color-secondary;
+
+        a {
+            color: $color-grey2;
+            text-decoration: none;
+            padding: 20px 20px;
+        }
+
+        img {
+            width: 50px;
+            display: absolute;
+        }
+    }
+
+    ul {
+        display: flex;
+
+        li {
+            list-style: none;
+            display: flex;
+
+            a {
+                color: $color-font;
+                text-decoration: none;
+                padding: 20px 20px;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// Navbar END
+
+
+.header {
+    width: 100%;
+    background: url('../slike/intro.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end;
+    height: 70vh;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+
+    .header-content {
+        background-color: rgba($color: $color-primary, $alpha: 0.5);
+        width: 80%;
+
+        h1, p {
+            color: $color-grey2;
+        }
+
+    }
+
+
+}
+
+// Header END
+
+// Section1
+
+.section1 {
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    margin-bottom: 20px;
+
+    .btn {
+        margin: 10px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        background-color: #fff;
+        border: $border-btn;
+
+        &:hover {
+            @include btn-hover();
+        }
+    }
+}
+
+
+
+// Section1 END
+
+// Section2
+
+.section2 {
+    background-color: $color-grey2;
+    padding: 80px;
+
+    .image-holder {
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        justify-content: start;
+
+        .card-holder {
+            position: relative;
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 50%;
+                width: 100%;
+                opacity: 0;
+                transition: .5s ease;
+                background-color: #fff;
+
+                &:hover {
+                    opacity: .7;
+                }
+
+                .text {
+                    color: black;
+                    font-size: 20px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                  }
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        }
+
+    }
+
+}
+
+// Section2 END
+
+// Section 3
+
+.section3 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+
+    .section3-btn {
+        padding: 10px;
+        border-radius: 25px;
+        display: none;
+        border: $border-btn;
+
+        &:hover {
+            @include btn-hover();
+        }
+    }
+
+    .table-wrapper {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    
+    }
+
+    h2, p {
+        padding: 20px;
+    }
+
+    .table1 {
+      
+        color: #fff;
+
+
+        td {
+            background-color: $color-primary;
+            padding: 10px 80px;
+            border: 1px solid black;
+        }
+
+        .orange {
+            background-color: $color-secondary;
+        }
+    }
+
+    .table2 {
+
+        td {
+            border: 1px solid black;
+            padding: 10px 80px;
+        }
+
+        thead {
+            .orange {
+                background-color: $color-secondary;
+                color: #fff;
+            }
+
+            .black {
+                background-color: $color-primary;
+                color: #fff;
+            }
+        }
+    }
+}
+
+// Section 3 END
+
+
+// Section 4
+
+.section4 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: $color-grey2;
+
+    h2 {
+        text-transform: uppercase;
+        padding: 40px;
+    }
+
+
+    .form-wrapper {
+        display: flex;
+        justify-content: center;
+
+
+        .form-container {
+            margin: 0 40px 40px 40px;
+            padding: 40px 40px;
+            background-color: $color-secondary;
+
+            form {
+
+                input, textarea, select {
+                    padding: 5px;
+                }
+
+                input, textarea {
+                   color: $color-grey1;
+                }
+
+                input[type=email] {
+                    display: block;
+                    width: 100%;
+
+                }
+
+                input[type=text] {
+                   width: 70%;
+                }
+
+                select {
+                    margin-right: 50px;
+                    width: 20%;
+                }
+
+                textarea {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// Section 4 END
+
+
+// Footer
+
+.footer {
+    background-color: $color-primary;
+    text-align: center;
+    p {
+        color: $color-grey1;
+        padding: 20px;
+        span {
+            color: $color-secondary;
+        }
+    }
+}
+
+
+// Footer END
+
+
+// MEDIA QUERIES
+
+// Tablets and smaller desktops
+
+@media (max-width: 1024px) {
+  
+    .section2 {
+        .image-holder {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .section3 {
+        padding: 0;
+        margin-bottom: 40px;
+
+        
+        .table1 {
+      
+            td {
+                padding: 10px;
+            }
+
+        }
+    
+        .table2 {
+    
+            td {
+                padding: 10px;
+            }
+    }
+    
+  }
+
+  .section4 {
+      display: block;
+      .form-wrapper {
+          display: block;
+
+          .map-container {
+              margin-bottom: 40px;
+              margin-right: 0;
+              margin-left: 0;
+          }
+
+          .form-container {
+            display: flex;
+            text-align: start;
+            justify-content: center;
+
+            form {
+
+                input, textarea, select {
+                    padding: 5px;
+                }
+
+                select {
+                    padding-right: 0px;
+                }
+            }
+        }
+
+    }
+  }
+
+}
+
+
+// Mobile
+
+
+@media (max-width: 480px) {
+
+    *{
+        margin-right: 0!important;
+        margin-left: 0!important;
+    }
+
+    .nav {
+        .new-york {
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .header {
+        justify-content: center;
+        background: black;
+        margin: 0;
+        padding-bottom: 20px;
+        height: auto;
+        .header-content {
+            background-color: black;
+        }
+    }
+
+    .nav {
+        display: block;
+    
+        ul {
+            display: block;
+    
+            li {
+                display: block;
+                text-align: center;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+
+    .section1 {
+        justify-content: space-around;
+        width: 100%;
+
+        .btn {
+            padding: 10px;
+            
+        }
+    }
+
+    .section2 {
+        .image-holder {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .section3 {
+        padding: 0;
+        margin-bottom: 40px;
+
+        .section3-btn {
+            display: block;
+            margin: 20px 80px!important;
+        }
+
+        
+        .table1, .table2 {
+            display: none;
+        }  
+    }
+
+    .section4 {
+        .form-wrapper {
+            .map-container {
+                iframe {
+                    width: 100%;
+                }
+            }
+
+            .form-container {
+                form {
+                    input[type=text], select {
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+    select {
+        margin-bottom: 40px;
+    }
+}
