@@ -1,0 +1,57 @@
+@import "vars";
+@import "mixins";
+
+*{
+    font-family: $main-font;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    
+  
+    .wrap-nav {
+        background-color: $background-orange;
+        font-size: 1.3em;
+        float: left;
+        @include clearfix;
+        height: 65px;
+        img {
+            width: 20%;
+            float: left;
+            @include clearfix;
+            margin-left: 1.5em;
+            
+        }
+        a{
+            color: white;
+            margin-left: 0.3em;
+            float: left;
+            padding: 8%;
+        }
+    }
+    nav {
+        text-align: center;
+        background-color: $background-dark-blue;
+        height: 65px;
+        ul {
+            list-style: none;
+            float: left;
+            li {
+                display: inline-block;
+                padding: 1.4em 1.3em;
+                cursor: pointer;
+                a{
+                    color: white;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
